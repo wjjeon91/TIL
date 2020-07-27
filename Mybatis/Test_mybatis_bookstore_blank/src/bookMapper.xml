@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 도서 정보 처리 SQL -->
+<mapper namespace="book.dao.BookMapper">
+
+	<insert id="insertBook" parameterType="b">
+		INSERT INTO
+			book
+		VALUES(
+			BOOKSEQ.NEXTVAL,
+			#{title},
+			#{author},
+			#{publisher},
+			#{price},
+			TO_CHAR(SYSDATE, 'YY/MM/DD')
+		)
+	</insert>
+	
+	<select id="listAll" resultType="b">
+		SELECT
+			*
+		FROM
+			book
+	</select>
+	
+	<delete id="deleteBook" parameterType="int">
+		DELETE FROM
+			book
+		WHERE
+			bnum = #{bnum}
+	</delete>
+	
+	<select id="getBook" parameterType="int" resultType="b">
+		SELECT
+			*
+		FROM
+			book
+		WHERE
+			bnum = #{bnum}
+	</select>
+	
+	<update id="updateBook" parameterType="b">
+		UPDATE
+			book
+		SET
+			title = #{title},
+			author = #{author},
+			publisher = #{publisher},
+			price = #{price}
+		WHERE
+			bnum = #{bnum}
+	</update>
+	
+	<select id="searchBook" parameterType="string" resultType="b">
+		SELECT
+			*
+		FROM
+			book
+		WHERE
+			UPPER(title) LIKE '%'||UPPER(#{title})||'%' 
+	</select>
+
+</mapper>
