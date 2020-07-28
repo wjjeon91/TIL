@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var ul = document.getElementById("ul");
+			
+			console.log(ul.innerHTML);
+			console.log(ul.innerText);
+			
+			var liList = document.getElementsByClassName("li");
+
+			console.log(liList);
+			
+			var liOne = liList[0];
+			var liTwo = liList[1];
+			
+			liOne.innerHTML = "<ol><li>One</li><li>Two</li></ol>"
+			liTwo.innerText += "Three"
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul">
+		<li class="li">1</li>
+		<li class="li">2</li>
+	</ul>
+</body>
+</html>

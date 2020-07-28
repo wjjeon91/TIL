@@ -1,0 +1,9 @@
+@charset "EUC-KR";
+
+div {
+	color: green;
+	font-size: 150%; 
+}
+p {
+	/* ??? */
+}

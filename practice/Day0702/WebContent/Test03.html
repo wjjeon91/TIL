@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function onclickFunc(){
+			alert("클릭하셨군요!");
+		}
+		window.onload = function(){
+			var btn = document.getElementById("btn");
+			btn.onclick = onclickFunc;
+		}
+	</script>
+</head>
+<body>
+	<input id="btn" type="button" value="클릭하세요!">
+</body>
+</html>

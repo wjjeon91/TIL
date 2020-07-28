@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		var password= "3879";
+		function check() {
+			var num = document.getElementById("num").value;
+			
+			if(num.length != 4 || num != password){
+				alert("잘못 입력하셨습니다!");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<h3>4자리 비밀번호 입력</h3>
+	<form method="get" action="Test05.html" onsubmit="return check();">
+		<input id="num" type="text">
+		<input type="submit" value="접속">
+	</form>
+</body>
+</html>

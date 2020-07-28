@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var bd = document.body;
+			var p = document.createElement("p");
+			var txt = document.createTextNode("hello, world!");
+			
+			p.appendChild(txt);	//<p>hello, world</p>
+			bd.appendChild(p);	
+			
+			var div1 = document.getElementById("div1");
+			//div1.innerHTML = "<div id= 'div0'>Hi, SCIT 39TH!</div>";
+			div1.innerText = "<div id= 'div0'>Hi, SCIT 39TH!</div>";
+			console.log(div1.innerHTML);
+			console.log(div1.innerText);
+			
+			var ul = document.getElementsByClassName("ui")[0];
+			console.log(ul.innerHTML);
+			console.log(ul.innerText);
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	
+	<ul class="ui">
+		<li>hi</li>
+		<li>hello</li>
+	</ul>
+</body>
+</html>
